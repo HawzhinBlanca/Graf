@@ -1,0 +1,124 @@
+{
+  "applicationInfo": {
+    "name": "Graf",
+    "version": "1.0.0",
+    "description": "4D Geometry Visualization Tool"
+  },
+  "visualizationTypes": [
+    {
+      "id": "tesseract",
+      "name": "Tesseract (Hypercube)",
+      "description": "A four-dimensional hypercube with 16 vertices and 32 edges",
+      "defaultScale": 1.5,
+      "defaultResolution": 32,
+      "defaultWireframe": true
+    },
+    {
+      "id": "hypersphere",
+      "name": "Hypersphere",
+      "description": "A four-dimensional sphere",
+      "defaultScale": 1.0,
+      "defaultResolution": 32,
+      "defaultWireframe": false
+    },
+    {
+      "id": "cliffordTorus",
+      "name": "Clifford Torus",
+      "description": "A torus in 4D space that can't self-intersect",
+      "defaultScale": 1.0,
+      "defaultResolution": 32,
+      "defaultWireframe": false
+    },
+    {
+      "id": "duocylinder",
+      "name": "Duocylinder",
+      "description": "Cartesian product of two disks in 4D",
+      "defaultScale": 1.0,
+      "defaultResolution": 32,
+      "defaultWireframe": true
+    },
+    {
+      "id": "quaternion",
+      "name": "Quaternion Visualization",
+      "description": "Visualization of quaternion mathematics in 4D",
+      "defaultScale": 1.0,
+      "defaultResolution": 32,
+      "defaultWireframe": true
+    },
+    {
+      "id": "customFunction",
+      "name": "Custom 4D Function",
+      "description": "Visualization of custom 4D mathematical functions",
+      "defaultScale": 1.0,
+      "defaultResolution": 32,
+      "defaultWireframe": false
+    }
+  ],
+  "projectionTypes": [
+    {
+      "id": "stereographic",
+      "name": "Stereographic",
+      "description": "Projects from 4D to 3D using stereographic projection"
+    },
+    {
+      "id": "perspective",
+      "name": "Perspective",
+      "description": "Projects from 4D to 3D using perspective projection"
+    },
+    {
+      "id": "orthographic",
+      "name": "Orthographic",
+      "description": "Projects from 4D to 3D by simply dropping the 4th coordinate"
+    }
+  ],
+  "rotationPlanes": [
+    {
+      "id": "xy",
+      "name": "XY Plane",
+      "description": "Rotation in the XY plane"
+    },
+    {
+      "id": "xz",
+      "name": "XZ Plane",
+      "description": "Rotation in the XZ plane"
+    },
+    {
+      "id": "xw",
+      "name": "XW Plane",
+      "description": "Rotation in the XW plane"
+    },
+    {
+      "id": "yz",
+      "name": "YZ Plane",
+      "description": "Rotation in the YZ plane"
+    },
+    {
+      "id": "yw",
+      "name": "YW Plane",
+      "description": "Rotation in the YW plane"
+    },
+    {
+      "id": "zw",
+      "name": "ZW Plane",
+      "description": "Rotation in the ZW plane"
+    }
+  ],
+  "renderingOptions": {
+    "wireframeGlowIntensity": 0.4,
+    "edgeHighlightIntensity": 0.7,
+    "ambientLightIntensity": 0.4,
+    "diffuseLightIntensity": 0.7,
+    "specularLightIntensity": 0.5,
+    "lightPosition": [20.0, 20.0, 20.0],
+    "backgroundColor": [0.1, 0.1, 0.1, 1.0]
+  },
+  "defaultSettings": {
+    "visualizationType": "tesseract",
+    "projectionType": "stereographic",
+    "resolution": 32,
+    "scale": 1.0,
+    "wireframe": true,
+    "showNormals": false,
+    "animationSpeed": 1.0
+  }
+} 
