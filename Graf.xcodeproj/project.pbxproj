@@ -35,16 +35,6 @@
 			path = Graf;
 			sourceTree = "<group>";
 		};
-		F0E486522D7274F400762F43 /* GrafTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GrafTests;
-			sourceTree = "<group>";
-		};
-		F0E4865C2D7274F400762F43 /* GrafUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GrafUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				F0E4863E2D7274F300762F43 /* Graf */,
-				F0E486522D7274F400762F43 /* GrafTests */,
-				F0E4865C2D7274F400762F43 /* GrafUITests */,
 				F0E4863D2D7274F300762F43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				F0E486512D7274F400762F43 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				F0E486522D7274F400762F43 /* GrafTests */,
-			);
 			name = GrafTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				F0E4865B2D7274F400762F43 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				F0E4865C2D7274F400762F43 /* GrafUITests */,
 			);
 			name = GrafUITests;
 			packageProductDependencies = (
