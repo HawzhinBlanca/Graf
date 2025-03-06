@@ -50,7 +50,6 @@ struct QuaternionView: View {
             Text("3Blue1Brown-Style Quaternion Visualization")
                 .font(.headline)
                 .padding(.top)
-
             // Visualization view
             QuaternionMetalView(renderer: renderer)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -60,14 +59,12 @@ struct QuaternionView: View {
                 .onAppear {
                     updateQuaternion()
                 }
-
             // Control panel
             TabView {
                 // Components tab
                 VStack(spacing: 12) {
                     Text("Quaternion Components")
                         .font(.headline)
-
                     HStack {
                         Text("w: \(quaternionW, specifier: "%.2f")")
                             .frame(width: 80, alignment: .leading)
@@ -77,7 +74,6 @@ struct QuaternionView: View {
                                 updateQuaternion()
                             }
                     }
-
                     HStack {
                         Text("x: \(quaternionX, specifier: "%.2f")")
                             .frame(width: 80, alignment: .leading)
@@ -87,7 +83,6 @@ struct QuaternionView: View {
                                 updateQuaternion()
                             }
                     }
-
                     HStack {
                         Text("y: \(quaternionY, specifier: "%.2f")")
                             .frame(width: 80, alignment: .leading)
@@ -97,7 +92,6 @@ struct QuaternionView: View {
                                 updateQuaternion()
                             }
                     }
-
                     HStack {
                         Text("z: \(quaternionZ, specifier: "%.2f")")
                             .frame(width: 80, alignment: .leading)
@@ -133,7 +127,6 @@ struct QuaternionView: View {
                             updateQuaternion()
                         }
                     }
-
                     Button("Reset to Identity") {
                         quaternionW = 1.0
                         quaternionX = 0.0
@@ -147,12 +140,10 @@ struct QuaternionView: View {
                 .tabItem {
                     Label("Components", systemImage: "slider.horizontal.3")
                 }
-
                 // Visualization Options tab
                 VStack(spacing: 12) {
                     Text("Visualization Options")
                         .font(.headline)
-
                     Picker("View Mode", selection: $viewMode) {
                         Text("Dual Sphere").tag(QuaternionViewMode.dualSphere)
                         Text("Single Sphere").tag(QuaternionViewMode.singleSphere)
@@ -162,17 +153,14 @@ struct QuaternionView: View {
                     .onChange(of: viewMode) { _, newValue in
                         renderer.setViewMode(viewMode: newValue)
                     }
-
                     Toggle("Show Axis Labels", isOn: $showAxisLabels)
                         .onChange(of: showAxisLabels) { _, newValue in
                             renderer.setShowAxisLabels(show: newValue)
                         }
-
                     Toggle("Show Unit Sphere", isOn: $showUnitSphere)
                         .onChange(of: showUnitSphere) { _, newValue in
                             renderer.setShowUnitSphere(show: newValue)
                         }
-
                     Toggle("Show Rotation Arcs", isOn: $showRotationArcs)
                         .onChange(of: showRotationArcs) { _, newValue in
                             renderer.setShowRotationArcs(show: newValue)
@@ -212,12 +200,10 @@ struct QuaternionView: View {
                 .tabItem {
                     Label("Options", systemImage: "gear")
                 }
-
                 // Educational tab
                 VStack(spacing: 15) {
                     Text("Understanding Quaternions")
                         .font(.headline)
-
                     Text("Quaternions represent rotations in 3D space using four components:")
                         .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -658,7 +644,6 @@ class QuaternionRenderer: NSObject, MTKViewDelegate {
                 normal: SIMD3<Float>(1, 0, 0),
                 color: SIMD4<Float>(1, 0, 0, 1)
             ),
-
             // Y-axis (green)
             Vertex(
                 position: SIMD3<Float>(0, 0, 0),
@@ -670,7 +655,6 @@ class QuaternionRenderer: NSObject, MTKViewDelegate {
                 normal: SIMD3<Float>(0, 1, 0),
                 color: SIMD4<Float>(0, 1, 0, 1)
             ),
-
             // Z-axis (blue)
             Vertex(
                 position: SIMD3<Float>(0, 0, 0),
@@ -923,12 +907,10 @@ class QuaternionRenderer: NSObject, MTKViewDelegate {
                 matrix_float4x4(translation: SIMD3<Float>(-1.5, 0, 0)),
                 matrix_float4x4(scaling: SIMD3<Float>(0.8, 0.8, 0.8))
             )
-
             // Draw sphere
             if showUnitSphere {
                 drawSphere(renderEncoder: renderEncoder, transform: inputTransform)
             }
-
             // Draw axes
             if showAxisLabels {
                 drawAxes(renderEncoder: renderEncoder, transform: inputTransform)
@@ -944,12 +926,10 @@ class QuaternionRenderer: NSObject, MTKViewDelegate {
                 ),
                 matrix_float4x4(scaling: SIMD3<Float>(0.8, 0.8, 0.8))
             )
-
             // Draw sphere
             if showUnitSphere {
                 drawSphere(renderEncoder: renderEncoder, transform: outputTransform)
             }
-
             // Draw axes
             if showAxisLabels {
                 drawAxes(renderEncoder: renderEncoder, transform: outputTransform)

@@ -200,7 +200,6 @@ class ExpressionParser {
                 }
             } else if char == "(" {
                 addCurrentToken()
-
                 // Check if the previous token was an identifier (function name)
                 if let lastToken = tokens.last, lastToken.type == .identifier {
                     if functions.contains(lastToken.value) {
@@ -208,7 +207,6 @@ class ExpressionParser {
                         tokens[tokens.count - 1] = updatedToken
                     }
                 }
-
                 tokens.append(Token(type: .leftParenthesis, value: "("))
             } else if char == ")" {
                 addCurrentToken()

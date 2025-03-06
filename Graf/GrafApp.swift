@@ -11,6 +11,9 @@ struct GrafApp: App {
     @State private var hasInitializationError: Bool = false
     @State private var initializationErrorMessage: String = ""
 
+    // AppDelegate for handling application lifecycle
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     init() {
         logger.info("GrafApp: Initializing application")
 
@@ -31,8 +34,6 @@ struct GrafApp: App {
             logger.debug("Running in DEBUG mode")
         #endif
     }
-
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
